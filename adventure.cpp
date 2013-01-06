@@ -10,16 +10,9 @@
 int main()
 {
   Game g;
-  try
-  {
-	  g.Play();
-  }
-  catch (...)
-  {
-	  cerr << "Program terminated, error occured!" << endl;
-	  return 1;
-  }
-  // TODO: Save progress here before terminating!
+
+  g.Play();
+
   return 0;
 }
 ////////////////////////////////////////////////////////////////////////////////

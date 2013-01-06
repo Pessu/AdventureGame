@@ -9,8 +9,9 @@
 #include <iostream>
 #include <iostream>
 #include <fstream>
-#include <string>
+#include <string.h>
 #include <cstdlib>
+#include "Globals.h"
 
 using namespace std;
 
@@ -24,6 +25,28 @@ Utilities::~Utilities()
 
 }
 
+int isNumeric(char* str)
+{
+    int len = strlen(str);
+    int i = 0;
+    int ret = 1;
+    int deccnt = 0;
+    while(i < len && ret != 0)
+    {
+        if(str[i] == '.')
+        {
+            deccnt++;
+            if(deccnt > 1)
+                ret = 0;
+        }
+        else
+            ret = isdigit(str[i]);
+        i++;
+    }
+    return ret;
+}
+
+
 int Utilities::convertStringToInt(string par1)
 {
 	int result = atoi(par1.c_str());
@@ -32,9 +55,7 @@ int Utilities::convertStringToInt(string par1)
 
 Utilities::statsStruct Utilities::LoadPlayer()
 {
-
 	statsStruct result;
-
 	string str;
 
 	ifstream instream;
@@ -50,7 +71,10 @@ Utilities::statsStruct Utilities::LoadPlayer()
 		}
 		instream.close();
 	}
-	else cout << "Unable to open file PlayerInfo.bin";
+	else
+	{
+		throw (FileNotFoundException("File error, could not load"));
+	}
 
 	return result;
 }
@@ -73,7 +97,7 @@ bool Utilities::SavePlayer(string par1, string par2, short int par3, int par4, i
 	}
 	else
 	{
-		cout << "Unable to open file PlayerInfo.bin";
+		throw (FileNotFoundException("File error, could not save"));
 	}
 	outstream.close();
 	return false;

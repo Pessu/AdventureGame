@@ -19,9 +19,7 @@ public:
 
   
   void Execute();
-  // Miika Pakarinen ->
-  	  //virtual ~AttackCommand();
-  // <- Miika Pakarinen
+
   /*
   {
     using namespace std;
