@@ -10,6 +10,7 @@ Module 3 changes:
 - Removed goldlib since I had to rework the gold files which were in the library to begin with
 - Added an overloaded addition operator for Gold class (used in GoldFactory)
 - Added friend class Dungeon for Room class.
+- Dungeon class prints "This place feels familiar if the room is already visited"
 
 Module 2 changes:
 - Moved all files into same folder for the repository, less trouble compiling (I use a bit more
