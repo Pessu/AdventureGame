@@ -21,8 +21,9 @@ private:
   Room *        rooms[kNumDirs];
   std::string   description;
   Game *        game;
+  bool			alreadyVisited;
 public:
-
+  friend class Dungeon;
   Room();
   virtual ~Room();
   void SetGame( Game * pGame );

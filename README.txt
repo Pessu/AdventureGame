@@ -4,7 +4,12 @@ Files are precompiled for every submission so no need to compile this, comes wit
 
 HOW TO COMPILE IF NEEDED:
 1. Compile the .o files "g++ *.cpp -c"
-4. Compile the program and link the .dll. g++ -o adventure.exe *.o -L. -lGoldlib
+4. Compile the program the exe "g++ -o adventure.exe *.o"
+
+Module 3 changes:
+- Removed goldlib since I had to rework the gold files which were in the library to begin with
+- Added an overloaded addition operator for Gold class (used in GoldFactory)
+- Added friend class Dungeon for Room class.
 
 Module 2 changes:
 - Moved all files into same folder for the repository, less trouble compiling (I use a bit more

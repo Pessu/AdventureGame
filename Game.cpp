@@ -22,6 +22,7 @@
 #include "Chambers.h"
 #include "globals.h"
 #include "time.h"
+#include "Gold.h"
 #include <signal.h>
 ////////////////////////////////////////////////////////////////////////////////
 using namespace std;
@@ -149,5 +150,11 @@ Game::SetCurrentRoom( Room *pRoom )
 {
   currentRoom = pRoom;
 }
+void
+Game::SetCurrentGold(int gold)
+{
+  currentGold = gold;
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 

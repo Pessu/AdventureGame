@@ -13,6 +13,8 @@ class Gold
 {
   friend class GoldFactory;
 private:
+  // Overloaded addition operator for Gold
+  Gold & operator+(const Gold & gold);
   unsigned int m_nAmount;
   Gold(unsigned int value);
 public:
@@ -20,5 +22,6 @@ public:
   unsigned int GetAmount() const;
   void SetAmount( unsigned int value );
 };
+
 ////////////////////////////////////////////////////////////////////////////////
 #endif

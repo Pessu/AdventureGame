@@ -22,13 +22,15 @@ public:
     if ( rand()%1000 < 436 )
     {
       GoldFactory f;
-      Gold *g = f.Create( 1+rand()%100 );
+      Gold *g = f.Create( 1+rand()%100);
+      GetGame()->SetCurrentGold(g->GetAmount());
       std::ostringstream s;
       s << "You found " << g->GetAmount() << " gold!\n";
       GetGame()->GetRenderer()->Render(s.str());
       delete g;
     }
-    else {
+    else
+    {
       GetGame()->GetRenderer()->Render( "You found nothing.\n");
     }
   }

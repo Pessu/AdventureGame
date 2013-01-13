@@ -23,6 +23,7 @@ private:
   Room      *rooms[kNumRooms]; ///< Map.
   Room      *currentRoom;
 public:
+  int currentGold;
   Game();
   virtual ~Game();
   void Play();
@@ -33,6 +34,8 @@ public:
   Player & GetPlayer();
   Room * GetCurrentRoom();
   void SetCurrentRoom( Room *pRoom );
+  void SetCurrentGold(int gold);
+  int GetCurrentGold();
 };
 ////////////////////////////////////////////////////////////////////////////////
 #endif

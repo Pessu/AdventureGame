@@ -11,10 +11,12 @@
 #include <fstream>
 #include <string.h>
 #include <cstdlib>
-#include "Globals.h"
-
+#include "Exceptions.h"
+#include "Game.h"
+#include "Player.h"
 using namespace std;
 
+//class Player;
 Utilities::Utilities()
 {
 
@@ -79,18 +81,18 @@ Utilities::statsStruct Utilities::LoadPlayer()
 	return result;
 }
 
-bool Utilities::SavePlayer(string par1, string par2, short int par3, int par4, int par5, int par6,int par7)
+bool Utilities::SavePlayer(Player & player)
 {
 	ofstream outstream("PlayerInfo.bin", ios::out | ios::trunc);
 	if (outstream)
 	{
-		outstream << par1 << endl;
-		outstream << par2 << endl;
-		outstream << par3 << endl;
-		outstream << par4 << endl;
-		outstream << par5 << endl;
-		outstream << par6 << endl;
-		outstream << par7 << endl;
+		outstream << player.GetName() << endl;
+		outstream << player.GetAge() << endl;
+		outstream << player.GetRace() << endl;
+		outstream << player.GetGender() << endl;
+		outstream << player.GetClass() << endl;
+		outstream << player.GetExperience() << endl;
+		outstream << player.GetHitpoints() << endl;
 
 		outstream.close();
 		return true;
@@ -99,6 +101,6 @@ bool Utilities::SavePlayer(string par1, string par2, short int par3, int par4, i
 	{
 		throw (FileNotFoundException("File error, could not save"));
 	}
-	outstream.close();
-	return false;
+
 }
+

@@ -26,7 +26,6 @@ private:
   int experience;
   int hitpoints;
 public:
-
   GameObject();
   virtual ~GameObject();
   void SetName( string name) ;

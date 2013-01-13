@@ -9,13 +9,11 @@
 #include <iostream>
 #include <cstdlib>
 const int ENEMY_DEFAULT_HITPOINTS = 3;
-
 using namespace std;
 
 class Enemy : public GameObject
 {
 public:
-
   Enemy() 
   {
     SetHitpoints(ENEMY_DEFAULT_HITPOINTS) ;

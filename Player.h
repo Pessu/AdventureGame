@@ -16,7 +16,6 @@ private:
   Game *game;
 public:
   Player();
-
   virtual ~Player();
   void SetGame( Game * game );
   void Attack( GameObject *pObject);

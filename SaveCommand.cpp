@@ -14,16 +14,6 @@
 #include "Utilities.h"
 void SaveCommand::Execute()
 {
-	string pName = GetGame()->GetPlayer().GetName();
-	short int pAge = GetGame()->GetPlayer().GetAge();
-	int pClass = GetGame()->GetPlayer().GetClass();
-	int pExp = GetGame()->GetPlayer().GetExperience();
-	int pGender = GetGame()->GetPlayer().GetGender();
-	string pRace = GetGame()->GetPlayer().GetRace();
-	int pHp = GetGame()->GetPlayer().GetHitpoints();
-
-	if (SavePlayer(pName,pRace,pAge,pGender,pClass,pExp,pHp))
-		std::cout<<"Game Saved!\n";
-	else
-		std::cout<<"Save failed!\n";
+	if (SavePlayer(GetGame()->GetPlayer()))
+			std::cout<<"Game Saved!\n";
 }

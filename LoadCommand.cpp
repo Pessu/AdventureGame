@@ -13,7 +13,7 @@
 #include "Utilities.h"
 #include <istream>
 #include <string>
-#include "gameObject.h"
+#include "GameObject.h"
 
 void LoadCommand::Execute()
 {
